@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #define ERROR NULL
-// typedef enum {false, true} bool;
+typedef enum {false, true} bool;
 typedef int ElementType;
 typedef struct LNode *PtrToLNode;
 struct LNode {
