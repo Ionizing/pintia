@@ -15,7 +15,9 @@ void BFS(const Graph G, const int Vertex, bool visited[]);
 void PrintGraph(const Graph G);
 
 int main () {
-freopen("in.txt", "r", stdin);
+#ifndef ONLINE_JUDGE
+	freopen("in.txt", "r", stdin);
+#endif
 
 	int nVertex, nEdge;
 	scanf("%d%d", &nVertex, &nEdge);
