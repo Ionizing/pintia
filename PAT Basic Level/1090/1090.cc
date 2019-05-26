@@ -21,23 +21,18 @@ int main(int argc, char* argv[]) {
   }
 
   for (int i=0; i!=M; ++i) {
-    SetInt goodlist;
+    std::vector<int> goodlist;
     int length;
     std::cin >> length;
     for (int j=0; j!=length; ++j) {
       int good;
       std::cin >> good;
-      goodlist.insert(good);
+      goodlist.emplace_back(good);
     }
+    std::sort(goodlist.begin(), goodlist.end());
 
     bool isFound = false;
     for (const int e : goodlist) {
-      /*
-       * if (!isFound and goodlist.end() != goodlist.find(Conflict[e])) {
-       *   isFound = true;
-       *   std::cout << "Yes" << std::endl;
-       * }
-       */
       std::vector<int> v_intersection;
       std::set_intersection(goodlist.begin(), goodlist.end(),
                             Conflict[e].begin(), Conflict[e].end(),
